@@ -29,6 +29,8 @@ RUN apk add --update \
     ca-certificates \
   && rm -rf /var/cache/apk/*
 
+RUN apk upgrade libcurl curl
+
 ADD ./weave ./weaver /home/weave/
 ADD ./weaveutil /usr/bin/
 ADD weavedata.db /weavedb/
